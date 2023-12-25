@@ -1,0 +1,31 @@
+# 1. 使用 MNIST 数据集上手
+
+[[参考视频]](https://www.bilibili.com/video/BV1GC4y15736/?spm_id_from=333.337.search-card.all.click&vd_source=26563b4de9f2dd5f6bc6148282be9ca0)
+
+<br>
+<img src=image.png width=600>
+<br>
+
+神经网络示意：
+<br>
+<img src=image-1.png width=600>
+<br>
+
+softmax 归一化：
+<br>
+<img src=image-2.png width=600>
+<br>
+
+batch:
+<br>
+<img src=image-3.png width=600>
+<br>
+
+激活函数：
+<br>
+<img src=image-4.png width=600>
+<br>
+
+<br>
+<img src=image-5.png width=600>
+<br>
