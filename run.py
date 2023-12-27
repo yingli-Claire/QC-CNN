@@ -9,21 +9,20 @@ from models.single_encoding import Net
 #from models.hybrid_layer import Net
 #from models.inception import Net
 #from models.multi_noisy import Net
-from app.train import train_network
+from app.train import train_network #<1>
 
 # load the dataset
 dataset = CSVDataset('./datasets/mnist_179_1200.csv')
-# output location/file names
-# outdir = 'results_255_tr_mnist358'
-# file_prefix = 'mnist_358'
-
 
 # load the device
-device = torch.device('cpu')
+if torch.cuda.is_available():
+    device = torch.device("cuda") # 使用第一个可用的GPU
+else:
+    device = torch.device("cpu") # 如果没有GPU可用，则使用CPU
+print("当前设备：", device)
 
 # define model
 net = Net()
-# net.to(device)
 criterion = nn.CrossEntropyLoss() # loss function
 optimizer = torch.optim.Adagrad(net.parameters(), lr = 0.5) # optimizer
 
@@ -36,4 +35,4 @@ val_set = Subset(dataset, val_id)
 
 
 train_network(net = net, train_set = train_set, val_set = val_set, device = device, 
-epochs = epochs, bs = bs, optimizer = optimizer, criterion = criterion)  # outdir = outdir, file_prefix = file_prefix)
+epochs = epochs, bs = bs, optimizer = optimizer, criterion = criterion)

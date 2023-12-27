@@ -12,8 +12,6 @@ class Net(nn.Module):
     def __init__(self):
         super(Net, self).__init__()
         self.conv = nn.Conv2d(1, 4, 2, stride = 2)
-        # self.lr1 = nn.LeakyReLU(0.1)
-        # self.ln1 = nn.LayerNorm(32, elementwise_affine=True)
         self.fc1 = nn.Linear(4*7*7, 6)
         self.fc2 = nn.Linear(6, 3)
 

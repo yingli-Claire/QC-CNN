@@ -12,21 +12,19 @@ class MyCSVDatasetReader(Dataset):
         print(csv_path)
         assert os.path.isfile(csv_path)
         self.DATA = np.genfromtxt(csv_path, delimiter = ',')
-        #self.DATA = self.DATA[:200]
         self.X = self.DATA[:, 0:-1]
         self.Y = self.DATA[:, -1]
-        #self.X = np.pi*normalize(self.X, axis = 0, norm = 'max')
-        self.X = np.pi*self.X/255
+        self.X = np.pi*normalize(self.X, axis = 0, norm = 'max')
         
         
     def __len__(self):
-        return len(self.Y)
+        return self.DATA.shape[1]
 
     def __getitem__(self, idx):
         if torch.is_tensor(idx):
             idx = idx.tolist()
 
-        X = torch.FloatTensor(self.X[idx, :])
+        X = torch.FloatTensor(self.X[idx])
         Y = self.Y[idx]
         sample = {'feature': X, 'label': Y}
         return sample
