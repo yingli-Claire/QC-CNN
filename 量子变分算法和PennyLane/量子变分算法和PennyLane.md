@@ -37,8 +37,19 @@ QC-VQC 中使用的是 Time Evolution Encoding
 ## 3. 本教程参考文献
 
 <br>
-<img src=image-5.png width=600>
+<img src=image-6.png width=600>
 <br>
 
 本文一作为 QML 非常重磅的研究者，写了很多有用的文章和教材
 
+本文讨论的数据编码与 VQC 表达能力的关联
+
+<br>
+<img src=image-7.png width=600>
+<br>
+
+这篇文章论证了 VQC 可以写成 Fourier series 这种表达形式，用不同层数的 VQC 去拟合傅里叶级数，发现层数越多，拟合效果越好。
+
+<br>
+<img src=image-8.png width=600>
+<br>
