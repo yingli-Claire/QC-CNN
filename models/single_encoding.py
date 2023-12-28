@@ -14,7 +14,6 @@ def circuit(inputs, weights):
     for qub in range(n_qubits):
         qml.Hadamard(wires=qub)
         qml.RY(inputs[qub], wires=qub)
-        # qml.RY(inputs[qub], wires=qub)
 
     for layer in range(n_layers):
         for i in range(n_qubits):
