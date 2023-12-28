@@ -6,8 +6,7 @@ import numpy as np
 from sklearn.metrics import confusion_matrix, accuracy_score
 import os
 
-def train_network(net = None, train_set = None, val_set = None, device = None, 
-epochs = 10, bs = 20, optimizer = None, criterion = None):
+def train_network(net = None, train_set = None, val_set = None, device = None, epochs = 10, bs = 20, optimizer = None, criterion = None):
 
     train_loader = DataLoader(train_set, batch_size=bs, shuffle=True)
     val_loader = DataLoader(val_set, batch_size=bs, shuffle=True)
@@ -83,8 +82,4 @@ epochs = 10, bs = 20, optimizer = None, criterion = None):
     
 
 
-    # torch.save(net.state_dict(), outdir + '/' + file_prefix + '_model')
-    # np.save(outdir + '/' + file_prefix + '_training_loss.npy', tr_losses)
-    # np.save(outdir + '/' + file_prefix + '_validation_loss.npy', val_losses)
-    # np.save(outdir + '/' + file_prefix + '_training_accuracy.npy', tr_accs)
-    # np.save(outdir + '/' + file_prefix + '_validation_accuracy.npy', val_accs)
+    torch.save(net.state_dict(), './final_model')
