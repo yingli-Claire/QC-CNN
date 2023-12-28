@@ -5,10 +5,40 @@
 ## 1. VQC
 
 需要两个部分：
-- 参数化部分
-- encoding 部分
+- 参数化部分 ( $ W_{\theta} $  )
+- encoding 部分 ( $ S(x) $  )
 
 <br>
 <img src=image.png width=600>
 <br>
+
+## 2. 编码方法
+
+<br>
+<img src=image-1.png width=600>
+<br>
+
+<br>
+<img src=image-2.png width=600>
+<br>
+
+<br>
+<img src=image-3.png width=600>
+<br>
+
+<br>
+<img src=image-4.png width=600>
+<br>
+
+QC-VQC 中使用的是 Time Evolution Encoding
+
+而 Hamiltonian Encoding 一般用于量子本征求解器、量子退火等，这个领域是 Quantum Simulation
+
+## 3. 本教程参考文献
+
+<br>
+<img src=image-5.png width=600>
+<br>
+
+本文一作为 QML 非常重磅的研究者，写了很多有用的文章和教材
 
